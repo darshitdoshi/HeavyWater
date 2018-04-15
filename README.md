@@ -38,4 +38,7 @@ https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev
 - Upon submitting, a GET request with URL encoded "words" parameter is fired using '/predict' as servlet path
 - Upon receiving such a request, the same servlet makes a corresponding POST request with a JSON body to the AWS Lambda service.
 - The prediction and confidence are displayed on the Result page. 
-
+- URL for the Web Service
+```
+http://default-environment.tyt99nzejm.us-east-1.elasticbeanstalk.com/
+```
