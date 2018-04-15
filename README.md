@@ -51,7 +51,7 @@ http://default-environment.tyt99nzejm.us-east-1.elasticbeanstalk.com/
 - Upon receiving an API call, the Lambda function can import the model and the vocabulary from S3 bucket if not found locally, but this takes a few seconds and the connection can timeout before predictions are made.
 - It is best to load the model and vocabulary explicitly before making prediction API calls
 - Loading the model :
-GET (https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model)
+GET https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model
 
 - Loading the vocabulary :
-GET (https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model)
+GET https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model
