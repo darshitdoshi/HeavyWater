@@ -2,18 +2,18 @@
 
 ### Document Classifier
 
-- The machine learning model has been developed using sklearn and python.
+- The machine learning model has been developed using scikit-learn and python.
 - The Document Classifier has been trained using SGDClassifier with log loss.
 - CountVectorizer is used to convert array of document strings to a sparse matrix of word counts. This is also used to convert input document string into appropriate representation for making predictions.
 
 - The trained model and vocabulary of words has been pickled and stored on AWS S3.
 
 
-### AWS Lambda Function (Prediction Webservice)
+### AWS Lambda Function (Prediction Microservice)
 
 - AWS Lambda is employed for making predictions with good scalability.
-- RESTful API for prediction requests and response.
-- Prediction performed loading the model from S3 and extracting the document string from the request.
+- Flask framework employed for RESTful API for prediction requests and response using AWS API Gateway.
+- Prediction performed by loading the model from AWS S3 and extracting the document string from the JSON body of POST request.
 - The JSON response includes 2 fields : 'prediction', 'confidence'
 
 - The prediction webservice can be employed to make prediction on multiple documents in a single API call by passing an array of document strings in the JSON request field 'data' : 
@@ -24,9 +24,18 @@ Response : {"prediction": ["pred1", "pred2", "pred3"], "confidence": ["conf1", "
 This is much faster than making separate API calls for each document.
 **Note:** The functionality to add multiple documents in a single prediction API call has not been implemented on the front end.
 
+- The endpoint URL for making the prediction microservice : 
+```
+https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev
+```
 
 ### Web Service
 
-- The website is hosted on AWS Beanstalk. 
-- The web page takes a string of document words and fires a POST request to Lambda service upon submission.
-- The results are 
+- The website is hosted on AWS Beanstalk configured with Apache Tomcat.
+- The Servlets are written in Java, compiled and packaged into war using Maven.
+
+- The servlet displays the home page which has field for entering document and submitting.
+- Upon submitting, a GET request with URL encoded "words" parameter is fired using '/predict' as servlet path
+- Upon receiving such a request, the same servlet makes a corresponding POST request with a JSON body to the AWS Lambda service.
+- The prediction and confidence are displayed on the Result page. 
+
