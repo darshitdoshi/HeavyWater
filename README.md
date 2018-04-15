@@ -18,7 +18,8 @@
 
 - The prediction webservice can be employed to make prediction on multiple documents in a single API call by passing an array of document strings in the JSON request field 'data' : 
 ```
-{"data": ["Document1", "Document2", "Document3"]}
+Request : {"data": ["Document1", "Document2", "Document3"]}
+Response : {"prediction": ["pred1", "pred2", "pred3"], "confidence": ["conf1", "conf2", "conf3"]}
 ```
 This is much faster than making separate API calls for each document.
 **Note:** The functionality to add multiple documents in a single prediction API call has not been implemented on the front end.
