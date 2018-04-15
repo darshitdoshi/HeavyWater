@@ -52,9 +52,9 @@ http://default-environment.tyt99nzejm.us-east-1.elasticbeanstalk.com/
 - It is best to load the model and vocabulary explicitly before making prediction API calls
 - Loading the model :
 ```
-GET (https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model)
+GET [https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model](https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model)
 ```
 - Loading the vocabulary :
 ```
-GET https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/vocab
+GET [https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/vocab](https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model)
 ```
