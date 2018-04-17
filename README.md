@@ -55,7 +55,7 @@ http://default-environment.tyt99nzejm.us-east-1.elasticbeanstalk.com/
 GET https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model
 
 - Loading the vocabulary :
-GET https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/model
+GET https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/vocab
 
 - WebService : http://default-environment.tyt99nzejm.us-east-1.elasticbeanstalk.com/
 
