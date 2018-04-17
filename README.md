@@ -64,5 +64,5 @@ GET https://x41c47q7c7.execute-api.us-east-1.amazonaws.com/dev/vocab
 - AWS Lambda
 - AWS Beanstalk
 - AWS S3
-- Python, scikit-learn, Flask
+- Python, scikit-learn, Flask, Zappa
 - Java
